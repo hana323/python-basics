@@ -1,5 +1,6 @@
 """Tests for the type hints and dataclasses example."""
 import pytest
+
 from python_concepts.examples.type_hints_and_dataclasses import (
     Person,
     create_person,
@@ -51,6 +52,6 @@ def test_get_person_info() -> None:
     """Test the get_person_info function."""
     adult = Person(name="Eve", age=25)
     minor = Person(name="Frank", age=15)
-    
+
     assert get_person_info(adult) == "Eve is 25 years old (adult)"
-    assert get_person_info(minor) == "Frank is 15 years old (minor)" 
+    assert get_person_info(minor) == "Frank is 15 years old (minor)"

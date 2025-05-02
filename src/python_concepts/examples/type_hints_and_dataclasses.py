@@ -9,6 +9,7 @@ from dataclasses import dataclass
 @dataclass
 class Person:
     """A simple person data class with type hints."""
+
     name: str
     age: int
     email: str | None = None
@@ -36,4 +37,4 @@ def create_person(name: str, age: int, email: str | None = None) -> Person:
 def get_person_info(person: Person) -> str:
     """Get a formatted string with person's information."""
     adult_status = "adult" if person.is_adult() else "minor"
-    return f"{person.name} is {person.age} years old ({adult_status})" 
+    return f"{person.name} is {person.age} years old ({adult_status})"

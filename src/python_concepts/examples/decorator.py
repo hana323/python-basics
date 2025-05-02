@@ -1,11 +1,12 @@
 import time
-from functools import wraps
 from collections import OrderedDict
+from functools import wraps
 
 
 def lru(max_size: int = 128):
     def cache(func):
         cache = OrderedDict()
+
         @wraps(func)
         def wrapper(*args, **kwargs):
             key = str(*args) + str(**kwargs)
@@ -25,11 +26,14 @@ def lru(max_size: int = 128):
                 print(f"New cache: {cache}")
 
             return cache[key]
+
         return wrapper
+
     return cache
 
 
 if __name__ == "__main__":
+
     @lru(max_size=3)
     def expensive_computations(n: int):
         time.sleep(n)
